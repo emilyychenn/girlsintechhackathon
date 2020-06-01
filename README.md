@@ -44,7 +44,7 @@ We wanted to fully display the power of this kit, so the kit comes packed with e
 + [Live Preview](http://demos.creative-tim.com/blk-design-system/index.html)
 + [Profile Page](http://demos.creative-tim.com/blk-design-system/examples/profile-page.html)
 + [Register Page](http://demos.creative-tim.com/blk-design-system/examples/register-page.html)
-+ [Landing Page](http://demos.creative-tim.com/blk-design-system/examples/landing-page.html)
++ [Landing Page](http://demos.creative-tim.com/blk-design-system/examples/volunteer-opportunities-page.html)
 
 ## Documentation
 
@@ -104,7 +104,7 @@ Blk• Design System
 ├── docs/
 │   └── documentation.html
 ├── examples/
-│   ├── landing-page.html
+│   ├── volunteer-opportunities-page.html
 │   ├── profile-page.html
 │   └── register-page.html
 ├── gulpfile.js
