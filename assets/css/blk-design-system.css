@@ -15675,7 +15675,7 @@ code {
 }
 
 @media screen and (max-width: 768px) {
-  .volunteer-opportunities-page .section-story-overview .image-container:nth-child(2) {
+  .landing-page .section-story-overview .image-container:nth-child(2) {
     margin-left: 0;
     margin-bottom: 30px;
   }
@@ -16481,11 +16481,11 @@ textarea.form-control:active {
   opacity: 0.1;
 }
 
-.volunteer-opportunities-page {
+.landing-page {
   overflow-x: hidden;
 }
 
-.volunteer-opportunities-page .page-header::after {
+.landing-page .page-header::after {
   background: radial-gradient(ellipse at top right, #292D61 23%, #171941 65%);
   position: absolute;
   height: 100vh;
@@ -16493,13 +16493,13 @@ textarea.form-control:active {
   opacity: .5;
 }
 
-.volunteer-opportunities-page .page-header .path {
+.landing-page .page-header .path {
   max-width: 65%;
   right: 0;
   top: 30px;
 }
 
-.volunteer-opportunities-page .page-header .path2 {
+.landing-page .page-header .path2 {
   position: absolute;
   opacity: 0.02;
   max-width: 41%;
@@ -16507,44 +16507,44 @@ textarea.form-control:active {
   top: -50px;
 }
 
-.volunteer-opportunities-page .page-header .squares {
+.landing-page .page-header .squares {
   top: 50%;
   right: 18%;
   max-height: 200px;
 }
 
-.volunteer-opportunities-page .page-header .wave {
+.landing-page .page-header .wave {
   top: 45%;
   right: 30%;
   max-height: 90px;
 }
 
-.volunteer-opportunities-page .page-header .circle {
+.landing-page .page-header .circle {
   top: 20%;
   right: 36%;
   max-height: 75px;
 }
 
-.volunteer-opportunities-page .page-header .triangle {
+.landing-page .page-header .triangle {
   top: 35%;
   left: 5%;
   max-height: 200px;
 }
 
-.volunteer-opportunities-page .section:first-of-type .path {
+.landing-page .section:first-of-type .path {
   left: -110px;
   max-width: 60%;
   top: -50px;
 }
 
-.volunteer-opportunities-page .section:nth-of-type(2) .path {
+.landing-page .section:nth-of-type(2) .path {
   left: auto;
   right: -250px;
   max-width: 70%;
   top: 0;
 }
 
-.volunteer-opportunities-page .section:nth-of-type(2) .path2 {
+.landing-page .section:nth-of-type(2) .path2 {
   position: absolute;
   opacity: 0.02;
   right: auto;
@@ -16553,7 +16553,7 @@ textarea.form-control:active {
   top: 420px;
 }
 
-.volunteer-opportunities-page .section:nth-of-type(2) .path3 {
+.landing-page .section:nth-of-type(2) .path3 {
   position: absolute;
   opacity: 0.02;
   left: auto;
@@ -16562,24 +16562,24 @@ textarea.form-control:active {
   top: -90px;
 }
 
-.volunteer-opportunities-page .section:nth-of-type(3) {
+.landing-page .section:nth-of-type(3) {
   padding-top: 200px;
 }
 
-.volunteer-opportunities-page .section:nth-of-type(3) .path {
+.landing-page .section:nth-of-type(3) .path {
   right: auto;
   left: 50px;
   max-width: 45%;
   top: 60px;
 }
 
-.volunteer-opportunities-page .section:nth-of-type(4) .path {
+.landing-page .section:nth-of-type(4) .path {
   max-width: 60%;
   right: 3%;
   top: 15%;
 }
 
-.volunteer-opportunities-page .section:nth-of-type(4) .path2 {
+.landing-page .section:nth-of-type(4) .path2 {
   position: absolute;
   opacity: 0.02;
   left: 25%;
@@ -16588,67 +16588,67 @@ textarea.form-control:active {
   top: 100px;
 }
 
-.volunteer-opportunities-page .section:nth-of-type(5) .path {
+.landing-page .section:nth-of-type(5) .path {
   max-width: 50%;
   left: 5%;
   top: 3%;
 }
 
-.volunteer-opportunities-page .header {
+.landing-page .header {
   height: 100vh;
   position: relative;
 }
 
-.volunteer-opportunities-page .header .container {
+.landing-page .header .container {
   padding-top: 26vh;
   color: #ffffff;
   z-index: 2;
   position: relative;
 }
 
-.volunteer-opportunities-page .header .share {
+.landing-page .header .share {
   margin-top: 150px;
 }
 
-.volunteer-opportunities-page .header h1 {
+.landing-page .header h1 {
   font-weight: 600;
 }
 
-.volunteer-opportunities-page .header .title {
+.landing-page .header .title {
   color: #ffffff;
 }
 
-.volunteer-opportunities-page .section-team .team .team-player img {
+.landing-page .section-team .team .team-player img {
   max-width: 100px;
 }
 
-.volunteer-opportunities-page .section-team .team-player {
+.landing-page .section-team .team-player {
   margin-bottom: 15px;
 }
 
-.volunteer-opportunities-page .section-contact-us .title {
+.landing-page .section-contact-us .title {
   margin-bottom: 15px;
 }
 
-.volunteer-opportunities-page .section-contact-us .description {
+.landing-page .section-contact-us .description {
   margin-bottom: 30px;
 }
 
-.volunteer-opportunities-page .section-contact-us .input-group,
-.volunteer-opportunities-page .section-contact-us .send-button,
-.volunteer-opportunities-page .section-contact-us .textarea-container {
+.landing-page .section-contact-us .input-group,
+.landing-page .section-contact-us .send-button,
+.landing-page .section-contact-us .textarea-container {
   padding: 0 40px;
 }
 
-.volunteer-opportunities-page .section-contact-us .textarea-container {
+.landing-page .section-contact-us .textarea-container {
   margin: 40px 0;
 }
 
-.volunteer-opportunities-page .section-contact-us a.btn {
+.landing-page .section-contact-us a.btn {
   margin-top: 35px;
 }
 
-.volunteer-opportunities-page .section-safe .icon i {
+.landing-page .section-safe .icon i {
   font-size: 21px;
 }
 
@@ -16903,7 +16903,7 @@ textarea.form-control:active {
 }
 
 .index-page,
-.volunteer-opportunities-page,
+.landing-page,
 .profile-page,
 .register-page {
   background-image: url("../../assets/img/dots.png");
@@ -16945,7 +16945,7 @@ textarea.form-control:active {
   .profile-page .page-header {
     max-height: unset;
   }
-  .volunteer-opportunities-page .page-header h1 {
+  .landing-page .page-header h1 {
     margin-top: 100px;
   }
 }
@@ -18357,7 +18357,7 @@ hr.line-deafult {
   .section-signup .card-register {
     margin-top: 50px;
   }
-  .volunteer-opportunities-page .section:nth-of-type(3) {
+  .landing-page .section:nth-of-type(3) {
     padding-top: 100px;
   }
   .section-safe img.img-fluid {
@@ -18555,7 +18555,7 @@ hr.line-deafult {
   padding-top: 20vh;
 }
 
-.volunteer-opportunities-page .content-center img {
+.landing-page .content-center img {
   height: 300px;
 }
 
