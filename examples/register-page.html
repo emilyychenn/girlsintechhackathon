@@ -33,6 +33,7 @@
   <link href="../assets/css/blk-design-system.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+
 </head>
 
 <body class="register-page">
@@ -84,10 +85,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../index.html">Back to Kit</a>
+            <a class="nav-link" href="../index.html">Back to Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/creativetimofficial/blk-design-system/issues">Have an issue?</a>
+            <a class="nav-link" href="https://github.com/creativetimofficial/blk-design-system/issues">Have a question?</a>
           </li>
         </ul>
       </div>
@@ -109,14 +110,15 @@
                   <h4 class="card-title">Register</h4>
                 </div>
                 <div class="card-body">
-                  <form class="form">
+                  <form id="registerForm" class="form" action="profile-page.html">
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <i class="tim-icons icon-single-02"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" placeholder="Full Name">
+                      <input type="text" name="name" class="form-control" placeholder="Full Name">
+                      <span class="error"></span>
                     </div>
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -124,7 +126,8 @@
                           <i class="tim-icons icon-email-85"></i>
                         </div>
                       </div>
-                      <input type="text" placeholder="Email" class="form-control">
+                      <input type="text" name="email" placeholder="Email" class="form-control">
+                      <span class="error"></span>
                     </div>
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -132,21 +135,18 @@
                           <i class="tim-icons icon-lock-circle"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" placeholder="Password">
+                      <input type="text" name="password" class="form-control" placeholder="Password">
+                      <span class="error"></span>
                     </div>
                     <div class="form-check text-left">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox">
-                        <span class="form-check-sign"></span>
-                        I agree to the
-                        <a href="javascript:void(0)">terms and conditions</a>.
-                      </label>
+                      Already have an account? <a href="login-page.html">Login here</a>
+                    </div>
+                    <div class="card-footer">
+                      <input class="btn btn-info btn-round btn-lg" type="submit" value="Get Started">
                     </div>
                   </form>
                 </div>
-                <div class="card-footer">
-                  <a href="javascript:void(0)" class="btn btn-info btn-round btn-lg">Get Started</a>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -250,6 +250,8 @@
   <script src="../assets/demo/demo.js"></script>
   <!-- Control Center for Black UI Kit: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/blk-design-system.min.js?v=1.0.0" type="text/javascript"></script>
+
+  <script src="../assets/js/register.js"></script>
 </body>
 
 </html>
