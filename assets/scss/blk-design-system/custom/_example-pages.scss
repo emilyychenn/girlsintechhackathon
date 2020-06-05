@@ -100,7 +100,7 @@
       }
     }
 }
-.volunteer-opportunities-page {
+.landing-page {
   overflow-x: hidden;
 
   .page-header {
@@ -552,7 +552,7 @@
 }
 
 .index-page,
-.volunteer-opportunities-page,
+.landing-page,
 .profile-page,
 .register-page{
   background-image: url("../../assets/img/dots.png");
@@ -602,7 +602,7 @@
     max-height: unset;
   }
 
-  .volunteer-opportunities-page{
+  .landing-page{
     .page-header{
       h1{
         margin-top: 100px;
