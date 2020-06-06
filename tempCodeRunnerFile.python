@@ -1,0 +1,2 @@
+response = requests.get("https://api.websitetoolbox.com")
+print(response.status_code)
