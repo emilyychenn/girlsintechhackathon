@@ -17,7 +17,7 @@ Blk• Design System is built on top of the much awaited Bootstrap 4. This makes
 
 ## Table of contents
 
-* [Getting Started](#getting-started)
+* [Install](#install)
 * [Example Pages](#example-pages)
 * [Documentation](#documentation)
 * [Tutorial](#tutorial)
@@ -26,16 +26,19 @@ Blk• Design System is built on top of the much awaited Bootstrap 4. This makes
 * [Technical Support or Questions](#technical-support-or-questions)
 * [Useful Links](#useful-links)
 
-## Getting Started
+## Install
+1. [MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
+2. [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
+After installation, open MySQL Workbench, import and execute `sql-file.sql`. Now you get the initial database!
+We have two separate tables for volunteers and users to store account information.
+Header structure : id | email | password | full name (TODO: will be change while dev, include rating...)
 
-We've also included an optional Gulp file to help you get started with theme customization. You'll need to install Node.js and Gulp before using our included gulpfile.js.
 
-1. Download the project's zip
-2. Make sure you have node.js (https://nodejs.org/en/) installed
+<!-- 2. Make sure you have node.js (https://nodejs.org/en/) installed
 3. Type `npm install` in terminal/console in the source folder where `package.json` is located
 4. You will find all the branding colors inside `assets/scss/blk-design-system/custom/_variables.scss`. You can change them with a `HEX` value or with other predefined variables.
 5. Run in terminal `gulp compile-scss` for a single compilation or `gulp watch` for continous compilation of the changes that you make in `*.scss` files. This command should be run in the same folder where `gulpfile.js` and `package.json` are located
-6. Run in terminal `gulp default` for opening the Dashboard Page (default) of the product.
+6. Run in terminal `gulp default` for opening the Dashboard Page (default) of the product. -->
 
 ## Example Pages
 
