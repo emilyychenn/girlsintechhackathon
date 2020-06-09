@@ -31,7 +31,7 @@
 //     })
 
 
-
+/// Ruby fetch
 const registerForm = document.getElementById('registerForm')
 
 
