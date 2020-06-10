@@ -80,6 +80,15 @@
     </div>
   </nav>
   <!-- End Navbar -->
+    
+   
+   
+    
+    
+    
+
+                      
+                   
   <div class="wrapper">
     <div class="page-header">
       <img src="../assets/img/dots.png" class="dots">
@@ -92,16 +101,20 @@
               <span class="text-white">Set up a time.</span>
             </h1>
             </h1>
+             
+            
+            
+            
+    
+            
              <!-- Add calendar -->
              <!-- created div for calendar  GA-->
              <div id="calendar-container">
               <!-- <iframe src="https://calendar.google.com/calendar/embed?src=annieliu8880%40gmail.com&ctz=America%2FVancouver" style="border: 0" width="550" height="600" frameborder="0" scrolling="no"></iframe> -->
             </div> 
-              
-              
-              
-              
-              
+            
+            
+        
             <div class="btn-wrapper profile pt-3">
               <a target="_blank" href="https://twitter.com/creativetim" class="btn btn-icon btn-twitter btn-round" data-toggle="tooltip" data-original-title="Follow us">
                 <i class="fab fa-twitter"></i>
@@ -139,7 +152,7 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#linkc">
-                      News
+                      More info 
                     </a>
                   </li>
                 </ul>
@@ -224,6 +237,17 @@
                         </div>
                       </div>
                     </div>
+                    
+                      
+    
+                       
+                      
+                      
+                      
+                      
+                      
+                      
+            
                     <button type="submit" class="btn btn-simple btn-primary btn-icon btn-round float-right"><i class="tim-icons icon-send"></i></button>
                   </div>
                   <div class="tab-pane" id="linkc">
@@ -264,28 +288,38 @@
       </div>
     </div>
   
-     <!--   Video Chat Function    -->
-    <script src="~/node_modules/connectycube/dist/connectycube.min.js"></script>
-    <script>
-        const cubeClient = require("connectycube"); 
-        
-        const CREDENTIALS = {
-                  appId: 21,
-                  authKey: "hhf87hfushuiwef",
-                  authSecret: "jjsdf898hfsdfk"
-                };
-
-                ConnectyCube.init(CREDENTIALS);
-  
-        
-                        const CONFIG = {
-                  debug: { mode: 1 } // enable DEBUG mode (mode 0 is logs off, mode 1 -> console.log())
-                    };
-                ConnectyCube.init(CREDENTIALS, CONFIG);
+  <div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    </div>
+</div>      
+                      
+                      
+                   
     
+    
+    
+    
+    
+    
+    
+   
 
     
-    </script>
 
       
     <!--   Core JS Files   -->
@@ -308,3 +342,4 @@
   <script src="../assets/js/blk-design-system.min.js?v=1.0.0" type="text/javascript"></script>  
  <!-- js file for calendar iframe GA -->
   <script defer src="../assets/js/calendar.js" type="text/javascript"></script>  
+    <script defer src="../assets/js/datepicker.js" type="text/javascript"></script>
