@@ -282,65 +282,52 @@
     </div>
   
     <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Rate User Experience
+ <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+               Rate User Experience
+              </button>
     
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Rate your experience</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-    
-    
-  <div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
+   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header justify-content-center">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                <i class="tim-icons icon-simple-remove"></i>
+              </button>
+              <h4 class="title title-up">Modal title</h4>
             </div>
+            <div class="modal-body">
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default">Nice Button</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
-        <script type="text/javascript">
-            (function () {
-                ('#datetimepicker1').datetimepicker();
-            });
-        </script>
-    </div>
-</div>      
+      </div>
+    
+  
     
     
-    
- 
-    
-    
-    
+     <h4 class="mb-5 mt-3">Datepicker</h4>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="datepicker-container">
+                <div class="form-group">
+                  <input type="text" id="datepicker" class="form-control datepicker" value="06/10/2020" data-datepicker-color="primary">
+                </div>
+              </div>
+            </div>
+          </div>
     
     
     
    
 
-    
 
       
     <!--   Core JS Files   -->
@@ -356,7 +343,8 @@
   <script src="../assets/js/plugins/chartjs.min.js"></script>
   <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
   <script src="../assets/js/plugins/moment.min.js"></script>
-  <script src="../assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+
+     <script src="../assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
   <!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
   <!-- Control Center for Black UI Kit: parallax effects, scripts for the example pages etc -->
@@ -365,9 +353,24 @@
   <script defer src="../assets/js/calendar.js" type="text/javascript"></script>  
     <script defer src="../assets/js/datepicker.js" type="text/javascript"></script>
     
+     <script>
+    $(document).ready(function() {
+      blackKit.initDatePicker();
+      blackKit.initSliders();
+    });
+
+    function scrollToDownload() {
+
+      if ($('.section-download').length != 0) {
+        $("html, body").animate({
+          scrollTop: $('.section-download').offset().top
+        }, 1000);
+      }
+    }
+  </script>
     
-    <!--modal file !-->
-<script defer src="../assets/js/modal.js" type="text/javascript"></script>
+    </body>
+</html>
     
   
    
