@@ -46,5 +46,5 @@ loginForm.addEventListener('submit', (evt) => {
 
 
     // redirect to profile page
-})
+
 
