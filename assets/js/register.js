@@ -33,11 +33,15 @@ registerForm.addEventListener('submit', (evt) => {
     .then(data => {
        
         if(data.errors){
-                
+        /// alert for false input
+
         alert(data.errors)
         }else{
+        //save data to localstorage for accessing in other files
+
         localStorage.token = data.token
         localStorage.id = data.user_id
+        // redirect to profile 
         window.location.assign('profile-page.html')
     }
     })

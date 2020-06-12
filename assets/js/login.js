@@ -26,11 +26,13 @@ loginForm.addEventListener('submit', (evt) => {
     .then(data => {
         console.log(data)
         if(data.errors){
-        
+        /// alert for false input
         alert(data.errors)
         }else{
+            //save data to localstorage for accessing in other files
         localStorage.setItem('id', data.id)
         localStorage.setItem('token', data.token)
+            // redirect to profile page
         window.location.assign('profile-page.html')
     }
 
@@ -39,6 +41,6 @@ loginForm.addEventListener('submit', (evt) => {
 )
 
 
-    // redirect to profile page
+
 
 
