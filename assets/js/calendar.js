@@ -2,6 +2,8 @@
 const calContainerDiv = document.getElementById('calendar-container')
 // console.log(calContainerDiv)
 //create iframe
+
+console.log(localStorage)
 let calIframe = document.createElement("iframe")
 //iframe attribute
 calIframe.style.border = 0

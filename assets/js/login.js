@@ -1,4 +1,6 @@
 //Ruby fetch
+console.log('login js is working')
+// const Swal = require('sweetalert2')
 const loginForm = document.getElementById('loginForm')
 
 loginForm.addEventListener('submit', (evt) => {
@@ -20,7 +22,29 @@ loginForm.addEventListener('submit', (evt) => {
         )
     })
     .then(r => r.json())
-    .then(console.log)
+
+    .then(data => {
+        console.log(data)
+        if(data.errors){
+        //     Swal.fire({
+        //         icon: 'error',
+        //         title: 'Oops...',
+        //         text: 'Something went wrong!'
+                
+        //       })
+
+        alert(data.errors)
+        }else{
+        localStorage.setItem('id', data.id)
+        localStorage.setItem('token', data.token)
+        window.location.assign('profile-page.html')
+    }
+
+    })
+}
+)
+
 
     // redirect to profile page
 })
+
