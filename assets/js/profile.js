@@ -1,10 +1,10 @@
+// console.log(localStorage)
 let userName = document.querySelector('#userName');
 let email = document.querySelector('#email');
 let hours = document.querySelector('#hours');
 
-userName.innerHTML = "Xiameng";
-email.innerHTML = "xiameng.chen@outlook.com"
-hours.innerHTML = "90";
+let id = localStorage.id
+let token = localStorage.token
 
 fetch(`http://localhost:3000/users/${id}`,{
     headers: { 
@@ -13,5 +13,14 @@ fetch(`http://localhost:3000/users/${id}`,{
     })
     .then(r => r.json())
     .then(data => {
-        console.log(data)
+    //// saving user data 
+        localStorage.username = data.username
+        localStorage.email = data.email
+        localStorage.credit = data.credit? data.credit:'0'
+        
+         
 })
+
+    userName.innerHTML = localStorage.username;
+    email.innerHTML = localStorage.email
+    hours.innerHTML = localStorage.credit
