@@ -33,7 +33,7 @@
 
 /// Ruby fetch
 const registerForm = document.getElementById('registerForm')
-
+// const Swal = require('sweetalert2')
 
 registerForm.addEventListener('submit', (evt) => {
     evt.preventDefault()
@@ -61,6 +61,21 @@ registerForm.addEventListener('submit', (evt) => {
         )
     })
     .then(r => r.json())
-    .then(console.log)
+    .then(data => {
+       
+        if(data.errors){
+        //     Swal.fire({
+        //                 icon: 'error',
+        //                 title: 'Oops...',
+        //                 text: 'Something went wrong!'
+                        
+        //               })
+        alert(data.errors)
+        }else{
+        localStorage.token = data.token
+        localStorage.id = data.user_id
+        window.location.assign('profile-page.html')
+    }
+    })
 }
 )
