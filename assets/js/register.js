@@ -1,7 +1,6 @@
 /// Ruby fetch
 const registerForm = document.getElementById('registerForm')
 
-// const Swal = require('sweetalert2')
 
 
 registerForm.addEventListener('submit', (evt) => {
@@ -34,12 +33,7 @@ registerForm.addEventListener('submit', (evt) => {
     .then(data => {
        
         if(data.errors){
-        //     Swal.fire({
-        //                 icon: 'error',
-        //                 title: 'Oops...',
-        //                 text: 'Something went wrong!'
-                        
-        //               })
+                
         alert(data.errors)
         }else{
         localStorage.token = data.token
@@ -50,5 +44,5 @@ registerForm.addEventListener('submit', (evt) => {
 }
 )
 
-})
+
 
