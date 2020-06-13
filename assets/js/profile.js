@@ -8,7 +8,9 @@ let editUsername = document.getElementById('edit-username')
 let editEmail = document.getElementById('edit-email')
 let editPassword = document.getElementById('edit-password')
 
-console.log(editUsername, editEmail, editPassword)
+let deleteBtn = document.getElementById('delete-user')
+
+
 let id = localStorage.id
 let token = localStorage.token
 
@@ -24,6 +26,7 @@ fetch(`http://localhost:3000/users/${id}`,{
         localStorage.email = data.email
         localStorage.credit = data.credit? data.credit:'0'
         localStorage.password = data.password
+        
         
         
          
@@ -56,6 +59,15 @@ editForm.addEventListener('submit', (evt) => {
         })
     })
     .then(r =>  r.json())
+    .then(console.log)
+}
+)
+
+deleteBtn.addEventListener('click', () => {
+    fetch(`http://localhost:3000/users/${id}`, {
+        method: 'DELETE'
+    })
+    .then(r => r.json())
     .then(console.log)
 }
 )
