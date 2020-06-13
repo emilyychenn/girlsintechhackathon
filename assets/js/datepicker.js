@@ -12,7 +12,7 @@
 			// check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
 			// update the format if it's yyyy-mm-dd
 			var date = parseDate($(this).val());
-
+           
 			if (! isValidDate(date)) {
 				//create date based on momentjs (we have that)
 				date = moment().format('YYYY-MM-DD');
@@ -38,7 +38,7 @@
 		var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
 		if (m)
 			value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
-
+         
 		return value;
    }
    

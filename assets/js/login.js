@@ -33,7 +33,8 @@ loginForm.addEventListener('submit', (evt) => {
         localStorage.setItem('id', data.id)
         localStorage.setItem('token', data.token)
             // redirect to profile page
-        window.location.assign('profile-page.html')
+            if(localStorage.token){
+        window.location.assign('profile-page.html')}
     }
 
     })
