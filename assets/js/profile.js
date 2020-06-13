@@ -3,6 +3,12 @@ let userName = document.querySelector('#userName');
 let email = document.querySelector('#email');
 let hours = document.querySelector('#hours');
 
+let editForm = document.getElementById('edit-form')
+let editUsername = document.getElementById('edit-username')
+let editEmail = document.getElementById('edit-email')
+let editPassword = document.getElementById('edit-password')
+
+console.log(editUsername, editEmail, editPassword)
 let id = localStorage.id
 let token = localStorage.token
 
@@ -17,6 +23,8 @@ fetch(`http://localhost:3000/users/${id}`,{
         localStorage.username = data.username
         localStorage.email = data.email
         localStorage.credit = data.credit? data.credit:'0'
+        localStorage.password = data.password
+        
         
          
 })
@@ -24,3 +32,30 @@ fetch(`http://localhost:3000/users/${id}`,{
     userName.innerHTML = localStorage.username;
     email.innerHTML = localStorage.email
     hours.innerHTML = localStorage.credit
+
+
+    editUsername.placeholder = localStorage.username
+    editEmail.placeholder = localStorage.email
+    
+
+editForm.addEventListener('submit', (evt) => {
+    evt.preventDefault()
+
+    let username = evt.target['username'].value
+    let email = evt.target['email'].value
+
+    fetch(`http://localhost:3000/users/${id}`, {
+        method: 'PATCH',
+        headers:{
+            'content-type': 'application/json',
+            'accept': 'application/json'
+        },
+        body: JSON.stringify({
+            username: username,
+            email:  email
+        })
+    })
+    .then(r =>  r.json())
+    .then(console.log)
+}
+)
