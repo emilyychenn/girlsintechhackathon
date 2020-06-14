@@ -49,12 +49,29 @@ return fetch(API + `/users/${id}`,{
     
 }
 
+
+function updateUser(id, username, email){
+    return fetch(API + '/users/' + `${id}`, {
+        method: 'PATCH',
+        headers: {
+            'content-type': "application/json",
+            'accept': 'application/json'
+        },
+        body: JSON.stringify({
+            username: username,
+            email: email
+        })
+    })
+    .then(r => r.json())
+}
+
 //export
 const Adapter = {
     getUsers: getUsers,
     createUser: createUser,
     deleteUser: deleteUser,
-    authUser: authUser
+    authUser: authUser,
+    updateUser: updateUser
     
     
 }
