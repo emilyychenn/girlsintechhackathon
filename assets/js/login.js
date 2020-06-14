@@ -2,7 +2,7 @@
 
 
 //Ruby fetch
-console.log('login js is working')
+
 
 const loginForm = document.getElementById('loginForm')
 
@@ -11,21 +11,8 @@ loginForm.addEventListener('submit', (evt) => {
      let username = evt.target['name'].value
      let password = evt.target['password'].value
 
-     fetch("https://blooming-wave-77750.herokuapp.com/login", {
-        method: 'POST',
-        headers: {
-            "content-type": "application/json",
-            "accept": "application/json"
-        },
-        body: JSON.stringify(
-            {
-                username: username,
-                password: password
-            }
-        )
-    })
-    .then(r => r.json())
-
+    
+   Adapter.loginUser(username, password)
     .then(data => {
         console.log(data)
         if(data.errors){
@@ -36,12 +23,13 @@ loginForm.addEventListener('submit', (evt) => {
         localStorage.setItem('id', data.id)
         localStorage.setItem('token', data.token)
             // redirect to profile page
+
+        window.location.assign('profile-page.html')
            
     }
 
     })
-    // if(localStorage.token !== ""){
-    //     window.location.assign('profile-page.html')}
+    
 }
 )
 

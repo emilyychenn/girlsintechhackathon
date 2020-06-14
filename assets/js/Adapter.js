@@ -65,13 +65,31 @@ function updateUser(id, username, email){
     .then(r => r.json())
 }
 
+
+function loginUser(username, password){
+    return  fetch(API + '/login', {
+        method: 'POST',
+        headers: {
+            "content-type": "application/json",
+            "accept": "application/json"
+        },
+        body: JSON.stringify(
+            {
+                username: username,
+                password: password
+            }
+        )
+    })
+    .then(r => r.json())
+}
+
 //export
 const Adapter = {
     getUsers: getUsers,
     createUser: createUser,
     deleteUser: deleteUser,
     authUser: authUser,
-    updateUser: updateUser
-    
+    updateUser: updateUser,
+    loginUser: loginUser
     
 }
