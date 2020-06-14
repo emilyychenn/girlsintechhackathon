@@ -1,4 +1,4 @@
-Backend link: https://github.com/GAierken/girlsintech_hackathon_backend
+Backend link: https://blooming-wave-77750.herokuapp.com/users
 
 
 
