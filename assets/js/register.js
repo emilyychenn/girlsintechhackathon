@@ -5,6 +5,7 @@ const registerForm = document.getElementById('registerForm')
 
 registerForm.addEventListener('submit', (evt) => {
     evt.preventDefault()
+    console.log(evt.target)
     let username = evt.target['name'].value
     let email = evt.target['email'].value
     let password = evt.target['password'].value
@@ -13,7 +14,7 @@ registerForm.addEventListener('submit', (evt) => {
         isVolunteer = true
     }
     
-    fetch('http://localhost:3000/users', {
+    fetch('https://blooming-wave-77750.herokuapp.com/users', {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
@@ -31,7 +32,7 @@ registerForm.addEventListener('submit', (evt) => {
     .then(r => r.json())
 
     .then(data => {
-       
+       console.log('data', data)
         if(data.errors){
         /// alert for false input
 
@@ -45,8 +46,8 @@ registerForm.addEventListener('submit', (evt) => {
         
     }
     })
-    if(localStorage.token !== ''){
-        window.location.assign('profile-page.html')}
+    // if(localStorage.token !== ''){
+    //     window.location.assign('profile-page.html')}
 }
 )
 
