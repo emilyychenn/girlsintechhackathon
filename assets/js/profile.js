@@ -64,10 +64,13 @@ editForm.addEventListener('submit', (evt) => {
 )
 
 deleteBtn.addEventListener('click', () => {
+    localStorage.clear()
+    
     fetch(`http://localhost:3000/users/${id}`, {
         method: 'DELETE'
     })
     .then(r => r.json())
     .then(console.log)
+
 }
 )

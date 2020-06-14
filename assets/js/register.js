@@ -42,10 +42,11 @@ registerForm.addEventListener('submit', (evt) => {
         localStorage.token = data.token
         localStorage.id = data.user_id
         // redirect to profile 
-        if(localStorage.token){
-        window.location.assign('profile-page.html')}
+        
     }
     })
+    if(localStorage.token !== ''){
+        window.location.assign('profile-page.html')}
 }
 )
 
