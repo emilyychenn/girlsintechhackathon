@@ -19,11 +19,10 @@ registerForm.addEventListener('submit', (evt) => {
            alert(data.errors)
        }else{
           
-          Adapter.authUser(data.user_id, data.token)
-          .then(userObj => {
-              new Profile(userObj)
-              window.location.assign('profile-page.html')
-          })
+          localStorage.token = data.token
+          localStorage.id = data.user_id
+
+          window.location.assign('profile-page.html')
        }
    })
 

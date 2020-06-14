@@ -1,79 +1,62 @@
 
+
+
 let userName = document.querySelector('#userName');
 let email = document.querySelector('#email');
 let hours = document.querySelector('#hours');
-
 let editForm = document.getElementById('edit-form')
 let editUsername = document.getElementById('edit-username')
 let editEmail = document.getElementById('edit-email')
 let editPassword = document.getElementById('edit-password')
 
 let deleteBtn = document.getElementById('delete-user')
-class Profile{
-  
-    constructor(userObj){
+
+
+window.addEventListener('DOMContentLoaded', (evt) => {
+    /// autorize user
+    Adapter.authUser(localStorage.id, localStorage.token)
+    .then(userObj => {
+        ///changing information form
+        userName.innerHTML = userObj.username
+        email.innerHTML = userObj.email
+        hours.innerHTML = userObj.credit? userObj.credit : '0'
         
-        this.id = userObj.id
-        this.username = userObj.userName
-        this.first_name = userObj.first_name
-        this.last_name = userObj.last_name
-        this.email = userObj.email
-        this.average_volunteer_rating = userObj.average_volunteer_rating
-        this.credit = userObj.credit
-        this.is_volunteer = userObj.is_volunteer
-        this.volunteer_appointments = userObj.volunteer_appointments
-        this.volunteers = userObj.volunteers
-        this.client_appointments = userObj.client_appointments
-        this.clients = userObj.clients
+        editUsername.placeholder = userObj.username
+        editEmail.placeholder = userObj.email
+    })
+
+
+    deleteBtn.addEventListener('click', () => {
+        Adapter.deleteUser(localStorage.id)
+        .then(data => {
+            alert('Your account is deleted!')
+        })
+        localStorage.clear()
         
     }
+    )
     
 
 
-   
-
-//     /// changing profile user data input
-//     userName.innerHTML = localStorage.username;
-//     email.innerHTML = localStorage.email
-//     hours.innerHTML = localStorage.credit
+} /// end of domcontentloaded
+)
 
 
-//     editUsername.placeholder = localStorage.username
-//     editEmail.placeholder = localStorage.email
+
+
+
     
+/// edit data fetch back
+editForm.addEventListener('submit', (evt) => {
+    evt.preventDefault()
 
-// editForm.addEventListener('submit', (evt) => {
-//     evt.preventDefault()
+    let username = evt.target['username'].value
+    let email = evt.target['email'].value
 
-//     let username = evt.target['username'].value
-//     let email = evt.target['email'].value
-
-//     fetch(`https://blooming-wave-77750.herokuapp.com/users/${id}`, {
-//         method: 'PATCH',
-//         headers:{
-//             'content-type': 'application/json',
-//             'accept': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             username: username,
-//             email:  email
-//         })
-//     })
-//     .then(r =>  r.json())
-//     .then(console.log)
-// }
-// )
-
-// deleteBtn.addEventListener('click', () => {
-//     localStorage.clear()
-    
-//     fetch(`https://blooming-wave-77750.herokuapp.com/users/${id}`, {
-//         method: 'DELETE'
-//     })
-//     .then(r => r.json())
-//     .then(console.log)
-
-// }
-// )
+    Adapter.updateUser(localStorage.id, username, email)
+    .then(console.log)
 }
-// console.log(localStorage)
+)
+
+
+
