@@ -8,7 +8,7 @@ loginForm.addEventListener('submit', (evt) => {
      let username = evt.target['name'].value
      let password = evt.target['password'].value
 
-     fetch("http://localhost:3000/login", {
+     fetch("https://blooming-wave-77750.herokuapp.com/login", {
         method: 'POST',
         headers: {
             "content-type": "application/json",
@@ -37,8 +37,8 @@ loginForm.addEventListener('submit', (evt) => {
     }
 
     })
-    if(localStorage.token !== ""){
-        window.location.assign('profile-page.html')}
+    // if(localStorage.token !== ""){
+    //     window.location.assign('profile-page.html')}
 }
 )
 
