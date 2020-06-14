@@ -26,9 +26,9 @@ calIframe.src=iframeSrc
 calContainerDiv.append(calIframe)
 
 ///get all volunteers
-fetch('http://localhost:3000/users')
-.then(r => r.json())
+Adapter.getUsers()
 .then(data => {
+    
     let volunteers = data.filter((user) => {
         return user.is_volunteer
     }
