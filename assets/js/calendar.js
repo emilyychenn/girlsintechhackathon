@@ -14,7 +14,7 @@ calIframe.scrolling = "no"
 
 // console.log(calIframe)
 /// fetch user email in the future
-let userEmail = localStorage.email
+let userEmail = 'g.aierken@gmail.com'
 let iframeSrc = 'https://calendar.google.com/calendar/embed?src='+`${userEmail}`+'&ctz=America%2FVancouver'
 calIframe.src=iframeSrc
 /// add iframe to div
