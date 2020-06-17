@@ -54,7 +54,9 @@ editForm.addEventListener('submit', (evt) => {
     let email = evt.target['email'].value
 
     Adapter.updateUser(localStorage.id, username, email)
-    .then(console.log)
+    .then(data => {
+        alert('Your information is updated!')
+    })
 }
 )
 

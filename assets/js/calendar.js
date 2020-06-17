@@ -1,10 +1,13 @@
 //find the div
 const calContainerDiv = document.getElementById('calendar-container')
-const volunteerDropdownDiv = document.getElementById("volunteer-dropdown-menu")
+const volunteerDropdownSelect = document.getElementById("volunteer-dropdown-menu")
+const appointmentSubmit = document.getElementById('appointment-submit')
 // console.log(calContainerDiv)
-// console.log(volunteerDropdownDiv)
-//create iframe
 
+// console.log(appointmentSubmit)
+
+
+////create iframe
 console.log(localStorage)
 let calIframe = document.createElement("iframe")
 
@@ -36,23 +39,51 @@ Adapter.getUsers()
     // console.table(volunteers)
   
     // console.log(dropdownItem)
-      /// add dropdown menu
-
+      
+    /// add dropdown menu
    volunteers.map((volunteer) => {
-        let dropdownItem = document.createElement('a')
-            dropdownItem.className = "dropdown-item" 
-            dropdownItem.href = '#'
+        let dropdownItem = document.createElement('option')
+          
+            dropdownItem.value = volunteer.username
             dropdownItem.innerHTML = volunteer.username
-       
-            volunteerDropdownDiv.append(dropdownItem)
-       ///click appointment fetch post
-            dropdownItem.addEventListener('click', () => {
-                console.log(`${volunteer.username} is clicked`)
-                 //client_id, volunteer_id, appointdate
-            }
-            )
+            dropdownItem.dataset.id = volunteer.id
+
+            volunteerDropdownSelect.append(dropdownItem)
+      
+           
     }
     )
   
     
 })
+
+///appointment fetch create
+appointmentSubmit.addEventListener('submit', (evt) => {
+    evt.preventDefault()
+       let pickedDate = evt.target['date'].value
+       let selectedUser = evt.target['selected-user'].value
+       let client_id = localStorage.id
+    //    console.log(pickedDate, selectedUser, client_id)
+       
+     //// find volunteer id
+       let volunteer_id = ''
+       for(let i = 0; i < evt.target['selected-user'].children.length; i++){
+           if(evt.target['selected-user'].children[i].text === selectedUser){
+               volunteer_id = evt.target['selected-user'].children[i].dataset.id
+           }
+       }
+
+       console.log('client', client_id, 'volunteer', volunteer_id, 'date', pickedDate)
+
+       Adapter.createAppointment(client_id, volunteer_id, pickedDate)
+       .then(data => {
+
+        if(data.errors){
+            alert(data.errors)
+        }else{
+           alert(`Your appointment with ${selectedUser} is scheduled.`)
+        }
+       })
+    
+}
+)
