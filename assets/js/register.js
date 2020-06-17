@@ -13,39 +13,20 @@ registerForm.addEventListener('submit', (evt) => {
         isVolunteer = true
     }
     
-    fetch('http://localhost:3000/users', {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json',
-            'accept': 'application/json'
-        },
-        body: JSON.stringify(
-            {
-                username: username,
-                email: email,
-                password: password,
-                is_volunteer: isVolunteer
-            }
-        )
-    })
-    .then(r => r.json())
+   Adapter.createUser(username, email, password, isVolunteer)
+   .then(data => {
+       if(data.errors){
+           alert(data.errors)
+       }else{
+          
+          localStorage.token = data.token
+          localStorage.id = data.user_id
 
-    .then(data => {
-       
-        if(data.errors){
-        /// alert for false input
+          window.location.assign('profile-page.html')
+       }
+   })
 
-        alert(data.errors)
-        }else{
-        //save data to localstorage for accessing in other files
 
-        localStorage.token = data.token
-        localStorage.id = data.user_id
-        // redirect to profile 
-        if(localStorage.token){
-        window.location.assign('profile-page.html')}
-    }
-    })
 }
 )
 

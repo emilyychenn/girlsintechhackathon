@@ -1,8 +1,9 @@
-// console.log(localStorage)
+
+
+
 let userName = document.querySelector('#userName');
 let email = document.querySelector('#email');
 let hours = document.querySelector('#hours');
-
 let editForm = document.getElementById('edit-form')
 let editUsername = document.getElementById('edit-username')
 let editEmail = document.getElementById('edit-email')
@@ -11,63 +12,51 @@ let editPassword = document.getElementById('edit-password')
 let deleteBtn = document.getElementById('delete-user')
 
 
-let id = localStorage.id
-let token = localStorage.token
-
-fetch(`http://localhost:3000/users/${id}`,{
-    headers: { 
-        "Authorization": token
-    }
+window.addEventListener('DOMContentLoaded', (evt) => {
+    /// autorize user
+    Adapter.authUser(localStorage.id, localStorage.token)
+    .then(userObj => {
+        ///changing information form
+        userName.innerHTML = userObj.username
+        email.innerHTML = userObj.email
+        hours.innerHTML = userObj.credit? userObj.credit : '0'
+        
+        editUsername.placeholder = userObj.username
+        editEmail.placeholder = userObj.email
     })
-    .then(r => r.json())
-    .then(data => {
-    //// saving user data 
-        localStorage.username = data.username
-        localStorage.email = data.email
-        localStorage.credit = data.credit? data.credit:'0'
-        localStorage.password = data.password
-        
-        
-        
-         
-})
-    /// changing profile user data input
-    userName.innerHTML = localStorage.username;
-    email.innerHTML = localStorage.email
-    hours.innerHTML = localStorage.credit
 
 
-    editUsername.placeholder = localStorage.username
-    editEmail.placeholder = localStorage.email
+    deleteBtn.addEventListener('click', () => {
+        Adapter.deleteUser(localStorage.id)
+        .then(data => {
+            alert('Your account is deleted!')
+        })
+        localStorage.clear()
+        
+    }
+    )
     
 
+
+} /// end of domcontentloaded
+)
+
+
+
+
+
+    
+/// edit data fetch back
 editForm.addEventListener('submit', (evt) => {
     evt.preventDefault()
 
     let username = evt.target['username'].value
     let email = evt.target['email'].value
 
-    fetch(`http://localhost:3000/users/${id}`, {
-        method: 'PATCH',
-        headers:{
-            'content-type': 'application/json',
-            'accept': 'application/json'
-        },
-        body: JSON.stringify({
-            username: username,
-            email:  email
-        })
-    })
-    .then(r =>  r.json())
+    Adapter.updateUser(localStorage.id, username, email)
     .then(console.log)
 }
 )
 
-deleteBtn.addEventListener('click', () => {
-    fetch(`http://localhost:3000/users/${id}`, {
-        method: 'DELETE'
-    })
-    .then(r => r.json())
-    .then(console.log)
-}
-)
+
+
