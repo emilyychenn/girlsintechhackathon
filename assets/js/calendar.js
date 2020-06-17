@@ -1,10 +1,13 @@
 //find the div
 const calContainerDiv = document.getElementById('calendar-container')
-const volunteerDropdownDiv = document.getElementById("volunteer-dropdown-menu")
+const volunteerDropdownSelect = document.getElementById("volunteer-dropdown-menu")
+const appointmentSubmit = document.getElementById('appointment-submit')
 // console.log(calContainerDiv)
-// console.log(volunteerDropdownDiv)
-//create iframe
 
+// console.log(appointmentSubmit)
+
+
+////create iframe
 console.log(localStorage)
 let calIframe = document.createElement("iframe")
 
@@ -39,20 +42,28 @@ Adapter.getUsers()
       /// add dropdown menu
 
    volunteers.map((volunteer) => {
-        let dropdownItem = document.createElement('a')
-            dropdownItem.className = "dropdown-item" 
-            dropdownItem.href = '#'
+        let dropdownItem = document.createElement('option')
+          
+            dropdownItem.value = volunteer.username
             dropdownItem.innerHTML = volunteer.username
-       
-            volunteerDropdownDiv.append(dropdownItem)
-       ///click appointment fetch post
-            dropdownItem.addEventListener('click', () => {
-                console.log(`${volunteer.username} is clicked`)
-                 //client_id, volunteer_id, appointdate
-            }
-            )
+            dropdownItem.dataset.id = volunteer.id
+
+            volunteerDropdownSelect.append(dropdownItem)
+      
+           
     }
     )
   
     
 })
+
+
+appointmentSubmit.addEventListener('submit', (evt) => {
+    evt.preventDefault()
+       let pickedDate = evt.target['date'].value
+       
+
+       
+    
+}
+)

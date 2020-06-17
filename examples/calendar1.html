@@ -255,39 +255,39 @@
                     </div>
                   </div>
                   <div class="tab-pane" id="linkb">
-                      <form>
- 
+                      
+    <form id="appointment-submit">
      <div class="form-group">
-     <label for="exampleInputTip1">Tip (Optional)</label>
-    <input type="tip" class="form-control" id="exampleInputip1" placeholder="Tip Optional">
-  </div>
-    <div class="form-group">
+          <label for="exampleInputTip1">Tip (Optional)</label>
+          <input name='tip' type="tip" class="form-control" id="exampleInputip1" placeholder="Tip Optional">
+     </div>
+        <div class="form-group">
             <label for="exampleDatePicker1">Pick a time</label> 
         <div class="datepicker-container">
-         <input type="text" id="datepicker" class="form-control datepicker" value="06/10/2020" data-datepicker-color="primary">
+         <input name='date' type="text" id="datepicker" class="form-control datepicker" data-datepicker-color="primary">
         </div>         
-                          </div>  
+      </div>  
     <div class="form-group">
-            <label for="exampleList1">Pick a volunteer</label>      
-             <div class="dropdown">
-  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <label for="volunteers">Pick a volunteer</label>   
+              <select name="volunteer" id="volunteer-dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <!-- <a class="dropdown-item" href="#">John</a>
+              <a class="dropdown-item" href="#">Pamela</a>
+              <a class="dropdown-item" href="#">Jack</a> -->
+              </select>  
+          </div>
+                          
+            <input type="submit" class="btn btn-primary"></input>
+        </form> 
+             <!-- <div class="dropdown"> -->
+  <!-- <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
    Volunteer/Therapist List
-  </button>
-  <div class="dropdown-menu" id="volunteer-dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <!-- <a class="dropdown-item" href="#">John</a>
-    <a class="dropdown-item" href="#">Pamela</a>
-    <a class="dropdown-item" href="#">Jack</a> -->
-  </div>
+  </button> -->
 
-</div>         
-                          
-                          
-                          </div>
-                          
-                          
 
-  <input type="submit" class="btn btn-primary"></input>
-</form>
+<!-- </div>          -->
+                          
+                          
+                          
             
                       
                     
