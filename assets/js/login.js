@@ -11,7 +11,7 @@ loginForm.addEventListener('submit', (evt) => {
      let username = evt.target['name'].value
      let password = evt.target['password'].value
 
-    
+   ///fetch login 
    Adapter.loginUser(username, password)
     .then(data => {
         console.log(data)
