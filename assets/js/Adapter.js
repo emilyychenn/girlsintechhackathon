@@ -83,6 +83,30 @@ function loginUser(username, password){
     .then(r => r.json())
 }
 
+function createAppointment(client_id, volunteer_id, date){
+  
+
+   
+    return fetch(API + '/appointments', {
+        
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+            'accept': 'application/json'
+        },
+        
+        body: JSON.stringify(
+            
+            {
+                client_id: client_id,
+                volunteer_id: volunteer_id,
+                apoint_date: date
+            }
+        )
+    })
+    .then(r => r.json())
+    
+}
 //export
 const Adapter = {
     getUsers: getUsers,
@@ -90,6 +114,7 @@ const Adapter = {
     deleteUser: deleteUser,
     authUser: authUser,
     updateUser: updateUser,
-    loginUser: loginUser
+    loginUser: loginUser,
+    createAppointment: createAppointment
     
 }
