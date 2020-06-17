@@ -73,8 +73,8 @@ appointmentSubmit.addEventListener('submit', (evt) => {
            }
        }
 
-       console.log('client', client_id, 'volunteer', volunteer_id, 'date', pickedDate)
-
+    //    console.log('client', client_id, 'volunteer', volunteer_id, 'date', pickedDate)
+    ///post fetch
        Adapter.createAppointment(client_id, volunteer_id, pickedDate)
        .then(data => {
 

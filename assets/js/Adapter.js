@@ -49,7 +49,7 @@ return fetch(API + `/users/${id}`,{
     
 }
 
-
+//user update fetch
 function updateUser(id, username, email){
     return fetch(API + '/users/' + `${id}`, {
         method: 'PATCH',
@@ -65,7 +65,7 @@ function updateUser(id, username, email){
     .then(r => r.json())
 }
 
-
+///user login fetch
 function loginUser(username, password){
     return  fetch(API + '/login', {
         method: 'POST',
@@ -82,7 +82,7 @@ function loginUser(username, password){
     })
     .then(r => r.json())
 }
-
+/// creat appointment
 function createAppointment(client_id, volunteer_id, date){
   
 
@@ -107,6 +107,8 @@ function createAppointment(client_id, volunteer_id, date){
     .then(r => r.json())
     
 }
+
+
 //export
 const Adapter = {
     getUsers: getUsers,
