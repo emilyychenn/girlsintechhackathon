@@ -210,46 +210,48 @@
                     </div>
                   </div>
                   <div class="tab-pane" id="linkb">
-                      
-    <form id="appointment-submit" method="POST">
-     <div class="form-group">
-          <label for="exampleInputTip1">Tip (Optional)</label>
-          <input name='tip' type="tip" class="form-control" id="exampleInputip1" placeholder="Tip Optional">
-     </div>
-        <div class="form-group">
-            <label for="exampleDatePicker1">Pick a time</label> 
-        <div class="datepicker-container">
-         <input name='date' type="text" id="datepicker" class="form-control datepicker" data-datepicker-color="primary">
-        </div>         
-      </div>  
-    <div class="form-group">
-            <label for="volunteers">Pick a volunteer</label>   
-              <select name="selected-user" id="volunteer-dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <!-- <a class="dropdown-item" href="#">John</a>
+
+                    <form id="appointment-submit" method="POST">
+                      <div class="form-group">
+                        <label for="exampleInputTip1">Tip (Optional)</label>
+                        <input name='tip' type="tip" class="form-control" id="exampleInputip1"
+                          placeholder="Tip Optional">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleDatePicker1">Pick a time</label>
+                        <div class="datepicker-container">
+                          <input name='date' type="text" id="datepicker" class="form-control datepicker"
+                            data-datepicker-color="primary">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="volunteers">Pick a volunteer</label>
+                        <select name="selected-user" id="volunteer-dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <!-- <a class="dropdown-item" href="#">John</a>
               <a class="dropdown-item" href="#">Pamela</a>
               <a class="dropdown-item" href="#">Jack</a> -->
-              </select>  
-          </div>
-                          
-            <input type="submit" class="btn btn-primary"></input>
-        </form> 
-             <!-- <div class="dropdown"> -->
-  <!-- <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </select>
+                      </div>
+
+                      <input type="submit" class="btn btn-primary"></input>
+                    </form>
+                    <!-- <div class="dropdown"> -->
+                    <!-- <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
    Volunteer/Therapist List
   </button> -->
 
 
-<!-- </div>          -->
-                          
-                          
-                          
-            
-                      
-                    
-                      
-                      
-                    
-                      
+                    <!-- </div>          -->
+
+
+
+
+
+
+
+
+
+
                   </div>
                   <div class="tab-pane" id="linkc">
                     <div class="table-responsive">
@@ -358,12 +360,23 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-12">
-                        <div class="star-rating">
+                        <!--div class="star-rating">
                           <span class="fa fa-star-o" data-rating="1"></span>
                           <span class="fa fa-star-o" data-rating="2"></span>
                           <span class="fa fa-star-o" data-rating="3"></span>
                           <span class="fa fa-star-o" data-rating="4"></span>
-                          <span class="fa fa-star-o" data-rating="5"></span>
+                          <span class="fa fa-star-o" data-rating="5"></span-->
+                            <div class="rate">
+                              <input type="radio" id="star5" name="rate" value="5" />
+                              <label for="star5" title="text">5 stars</label>
+                              <input type="radio" id="star4" name="rate" value="4" />
+                              <label for="star4" title="text">4 stars</label>
+                              <input type="radio" id="star3" name="rate" value="3" />
+                              <label for="star3" title="text">3 stars</label>
+                              <input type="radio" id="star2" name="rate" value="2" />
+                              <label for="star2" title="text">2 stars</label>
+                              <input type="radio" id="star1" name="rate" value="1" />
+                              <label for="star1" title="text">1 star</label>
                           <input type="hidden" name="ratings" class="rating-value" value="5">
                         </div>
                       </div>
@@ -371,13 +384,12 @@
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default">Confirm</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
           </div>
-
 
           <!--   Core JS Files   -->
           <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
@@ -460,6 +472,46 @@
             .star-rating .fa-star {
               color: yellow;
             }
+
+            *{
+              margin: 0;
+              padding: 0;
+          }
+          .rate {
+              float: left;
+              height: 46px;
+              padding: 0 10px;
+          }
+          .rate:not(:checked) > input {
+              position:absolute;
+              top:-9999px;
+          }
+          .rate:not(:checked) > label {
+              float:right;
+              width:1em;
+              overflow:hidden;
+              white-space:nowrap;
+              cursor:pointer;
+              font-size:30px;
+              color:#ccc;
+          }
+          .rate:not(:checked) > label:before {
+              content: '★ ';
+          }
+          .rate > input:checked ~ label {
+              color: #ffc700;    
+          }
+          .rate:not(:checked) > label:hover,
+          .rate:not(:checked) > label:hover ~ label {
+              color: #deb217;  
+          }
+          .rate > input:checked + label:hover,
+          .rate > input:checked + label:hover ~ label,
+          .rate > input:checked ~ label:hover,
+          .rate > input:checked ~ label:hover ~ label,
+          .rate > label:hover ~ input:checked ~ label {
+              color: #c59b08;
+          }
           </style>
 
 </body>
