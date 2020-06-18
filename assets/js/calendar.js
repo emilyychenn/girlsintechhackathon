@@ -44,7 +44,7 @@ Adapter.getUsers()
     /// add dropdown menu
    volunteers.map((volunteer) => {
         let dropdownItem = document.createElement('option')
-          
+           
             dropdownItem.value = volunteer.username
             dropdownItem.innerHTML = volunteer.username
             dropdownItem.dataset.id = volunteer.id
