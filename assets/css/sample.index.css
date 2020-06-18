@@ -328,3 +328,8 @@ body {
   margin-top: 50px;
   color: #fff;
 }
+
+#login-button {
+  text-align: center;
+  padding-top: 14px;
+}
