@@ -22,8 +22,9 @@ calIframe.scrolling = "no"
 
 // console.log(calIframe)
 /// fetch user email in the future
-let userEmail = 'g.aierken@gmail.com'
-let iframeSrc = 'https://calendar.google.com/calendar/embed?src='+`${userEmail}`+'&ctz=America%2FVancouver'
+let userEmail = 'emilylynnchen@gmail.com'
+// let iframeSrc = 'https://calendar.google.com/calendar/embed?src='+`${userEmail}`+'&ctz=America%2FVancouver'
+let iframeSrc = "https://calendar.google.com/calendar/embed?src=7n1b46cb0v4nsok2foghjj67hs%40group.calendar.google.com&ctz=America%2FToronto"
 calIframe.src=iframeSrc
 /// add iframe to div
 calContainerDiv.append(calIframe)
