@@ -20814,3 +20814,7 @@ input.datetimepicker[data-color="yellow"]+.bootstrap-datetimepicker-widget.dropd
 #wtEmbedCode {
   margin-top:80px;
 }
+
+.star-rating{
+  background-color: rgb(31, 31, 100);
+}
