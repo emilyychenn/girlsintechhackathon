@@ -24,10 +24,6 @@ For volunteers:
 ## Usage
 
 
-## Dependencies
-Backend link: https://blooming-wave-77750.herokuapp.com/users
-
-
 
 ## Install
 1. [MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
@@ -44,3 +40,5 @@ Header structure : id | email | password | full name (TODO: will be change while
 6. Run in terminal `gulp default` for opening the Dashboard Page (default) of the product. -->
 
 
+## Dependencies
+Backend link: https://blooming-wave-77750.herokuapp.com/users
