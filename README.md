@@ -1,4 +1,4 @@
-# Help@Home
+# Help@Home :house:
 Girls in Tech Hackathon Submission
 
 ## Overview
