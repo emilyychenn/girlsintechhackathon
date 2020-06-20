@@ -21,9 +21,6 @@ For volunteers:
 * View past and upcoming appointments
 * Share their availability if they choose to participate in the grocery/medication pickup appointment service
 
-## Usage
-
-
 
 ## Install
 1. [MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
